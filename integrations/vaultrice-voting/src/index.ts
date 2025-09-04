@@ -1,52 +1,55 @@
 import {
-  createIntegration,
-  FetchEventCallback,
-  FetchPublishScriptEventCallback,
-  RuntimeContext,
-  RuntimeEnvironment
-} from '@gitbook/runtime'
-import { VoteBlock } from './vote-block'
+    createIntegration,
+    FetchEventCallback,
+    FetchPublishScriptEventCallback,
+    RuntimeContext,
+    RuntimeEnvironment,
+} from '@gitbook/runtime';
+import { VoteBlock } from './vote-block';
 
 // @ts-ignore
 // eslint-disable-next-line import/no-unresolved
-import script from './script.raw.js?raw' // the generated string module
+import script from './script.raw.js?raw'; // the generated string module
 
 type VaultriceContext = RuntimeContext<
-  RuntimeEnvironment<
-    {},
-    {
-      projectId?: string;
-      apiKey?: string;
-      apiSecret?: string;
-    }
-  >
->
+    RuntimeEnvironment<
+        {},
+        {
+            projectId?: string;
+            apiKey?: string;
+            apiSecret?: string;
+        }
+    >
+>;
 
 /**
  * serve the published script: return JS string with placeholders replaced
  */
-export const handleFetchPublishedScript: FetchPublishScriptEventCallback = async (event, { environment }: VaultriceContext) => {
-  return new Response(script as string, {
-    headers: {
-      'Content-Type': 'application/javascript',
-      'Cache-Control': 'public, max-age=3600'
-    }
-  })
-}
+export const handleFetchPublishedScript: FetchPublishScriptEventCallback = async (
+    event,
+    { environment }: VaultriceContext,
+) => {
+    return new Response(script as string, {
+        headers: {
+            'Content-Type': 'application/javascript',
+            'Cache-Control': 'public, max-age=3600',
+        },
+    });
+};
 
 /**
  * Generic HTTP handler (GitBook calls /integration)
  */
 export const handleFetch: FetchEventCallback = async (request, context) => {
-  const url = new URL(request.url)
-  const path = url.pathname
+    const url = new URL(request.url);
+    const path = url.pathname;
 
-  if (path.endsWith('voting.js') && url.searchParams.get('script') === 'true') {
-    return handleFetchPublishedScript(request as any, context as any) as any
-  }
+    if (path.endsWith('voting.js') && url.searchParams.get('script') === 'true') {
+        return handleFetchPublishedScript(request as any, context as any) as any;
+    }
 
-  return new Response(
-    `<!doctype html>
+    return new Response(
+        `<!doctype html>
     <html>
       <head>
         <meta charset="utf-8" />
@@ -76,17 +79,17 @@ export const handleFetch: FetchEventCallback = async (request, context) => {
         </script>
       </body>
     </html>`,
-    {
-      headers: {
-        'Content-Type': 'text/html',
-        'Cache-Control': 'public, max-age=86400'
-      },
-    }
-  )
-}
+        {
+            headers: {
+                'Content-Type': 'text/html',
+                'Cache-Control': 'public, max-age=86400',
+            },
+        },
+    );
+};
 
 export default createIntegration({
-  fetch: handleFetch,
-  fetch_published_script: handleFetchPublishedScript,
-  components: [VoteBlock]
-})
+    fetch: handleFetch,
+    fetch_published_script: handleFetchPublishedScript,
+    components: [VoteBlock],
+});
