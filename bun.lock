@@ -634,7 +634,7 @@
         "@gitbook/tsconfig": "workspace:*",
         "@types/react": "^19.1.12",
         "@types/react-dom": "^19.1.9",
-        "@vaultrice/react-components": "0.9.14",
+        "@vaultrice/react-components": "^1.0.0",
         "@vitejs/plugin-react": "5.0.2",
         "react": "19.1.1",
         "react-dom": "19.1.1",
@@ -1441,11 +1441,11 @@
 
     "@types/ws": ["@types/ws@8.5.14", "", { "dependencies": { "@types/node": "*" } }, "sha512-bd/YFLW+URhBzMXurx7lWByOu+xzU9+kb3RboOteXYDfW+tr+JZa99OyNmPINEGB/ahzKrEuc8rcv4gnpJmxTw=="],
 
-    "@vaultrice/react": ["@vaultrice/react@0.9.7", "", { "dependencies": { "@vaultrice/sdk": "0.9.20" }, "peerDependencies": { "react": ">=17.0.0", "react-dom": ">=17.0.0" } }, "sha512-Bz11o53ZBmpU1RT3mUd7OCgOtD92jbuitEA3leVSxQMyXHAtDq+dea0BSvEe5HS09bhi78VLf0Jd3JmOmJf+Tg=="],
+    "@vaultrice/react": ["@vaultrice/react@1.0.0", "", { "dependencies": { "@vaultrice/sdk": "^1.0.0" }, "peerDependencies": { "react": ">=17.0.0", "react-dom": ">=17.0.0" } }, "sha512-M831s8orr3EurCnNv0ACUT9VLOhQf01TZwIvWtPTrFkU8SQ35HbRHQcpwrR0o33nz8mPw6UuYK87o8ymmixbLQ=="],
 
-    "@vaultrice/react-components": ["@vaultrice/react-components@0.9.14", "", { "dependencies": { "@vaultrice/react": "0.9.7" }, "peerDependencies": { "react": ">=17.0.0", "react-dom": ">=17.0.0" } }, "sha512-40hfQn1QvDgo6BH1WFHAwZKp0OTgOX8spGkTqttlKT1p10Bb1dE4iecsE0Rc2rEXTi75fo0rKT2tLUr1Gt8/yA=="],
+    "@vaultrice/react-components": ["@vaultrice/react-components@1.0.0", "", { "dependencies": { "@vaultrice/react": "^1.0.0" }, "peerDependencies": { "react": ">=17.0.0", "react-dom": ">=17.0.0" } }, "sha512-dL1bh6JFQjR3Mtxdw7pLc41BN941ETeUOI61QgpFPsLt06EWK0G+maGhd4RnnE5N4G2XYdRO2YAYPJ2ThVborQ=="],
 
-    "@vaultrice/sdk": ["@vaultrice/sdk@0.9.20", "", {}, "sha512-/RXRinZbhRY8NSVg0FLML7IrcHCDbK+ZNjZ6VY+EAQD6Q9gDxWTaq1NJU1olSetvTGI/Vdr9K7Z1pcnn6i4qwQ=="],
+    "@vaultrice/sdk": ["@vaultrice/sdk@1.0.0", "", {}, "sha512-tNU4pnVxsDjJsYAQLMf3R6Da9L1K2XLt2oHvmjcSf+VfaFZow2shF1A0iVZ23Eab5431k5bpSjqVdYobPWPMYw=="],
 
     "@vitejs/plugin-react": ["@vitejs/plugin-react@5.0.2", "", { "dependencies": { "@babel/core": "^7.28.3", "@babel/plugin-transform-react-jsx-self": "^7.27.1", "@babel/plugin-transform-react-jsx-source": "^7.27.1", "@rolldown/pluginutils": "1.0.0-beta.34", "@types/babel__core": "^7.20.5", "react-refresh": "^0.17.0" }, "peerDependencies": { "vite": "^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0" } }, "sha512-tmyFgixPZCx2+e6VO9TNITWcCQl8+Nl/E8YbAyPVv85QCc7/A3JrdfG2A8gIzvVhWuzMOVrFW1aReaNxrI6tbw=="],
 
